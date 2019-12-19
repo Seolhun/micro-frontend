@@ -1,0 +1,9 @@
+{
+  "banner": "Banner",
+  "change-locale": "Change locale",
+  "auth": {
+    "login": "Login",
+    "logout": "Logout"
+  },
+  "google": "Google"
+}

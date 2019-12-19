@@ -3,8 +3,9 @@ import styled from '@emotion/styled';
 import { ContextProps } from '@src/stores';
 
 export interface LayoutProps {
-  ctx: ContextProps;
   children: React.ReactNode;
+
+  ctx?: ContextProps;
 }
 
 const LayoutWrapper = styled.div({});
