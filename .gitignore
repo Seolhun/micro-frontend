@@ -3,3 +3,7 @@ node_modules
 dist
 
 .next
+
+# Yarn
+
+yarn-error.log
