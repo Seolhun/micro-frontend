@@ -4,7 +4,6 @@ import { ContextProps } from '@src/stores';
 
 export interface LayoutProps {
   children: React.ReactNode;
-
   ctx?: ContextProps;
 }
 
