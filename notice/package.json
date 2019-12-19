@@ -7,7 +7,7 @@
 		"predev": "rm -rf ./node_modules/.cache dist",
 		"dev": "nodemon",
 		"build": "next build",
-		"start": "next start"
+		"start": "next start -p 5000"
 	},
 	"keywords": [],
 	"author": "",

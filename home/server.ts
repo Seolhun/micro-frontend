@@ -10,7 +10,7 @@ import nextI18NextMiddleware from 'next-i18next/middleware';
 import NextI18NextInstance from './src/i18n';
 import routes from './router/routes';
 
-const PORT = parseInt((process as any).env.PORT, 10) || 4000;
+const PORT = parseInt((process as any).env.PORT, 10) || 8080;
 const IS_DEV = process.env.NODE_ENV !== 'production';
 
 const app = next({ dev: IS_DEV });
