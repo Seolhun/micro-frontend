@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"build": "cd home && yarn install && cd ../notice && yarn install",
+		"build": "cd home && yarn build && cd ../notice && yarn build",
 		"dev": "cd home && yarn dev && cd ../notice && yarn dev"
   },
   "repository": {

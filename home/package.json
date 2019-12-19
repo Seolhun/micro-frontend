@@ -5,7 +5,9 @@
 	"main": "index.js",
 	"scripts": {
 		"predev": "rm -rf ./node_modules/.cache dist",
-		"dev": "nodemon"
+		"dev": "nodemon",
+		"build": "next build",
+		"start": "next start"
 	},
 	"keywords": [],
 	"author": "",
