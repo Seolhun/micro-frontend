@@ -1,14 +1,16 @@
 version: "3.7"
 services:
-	web-home:
-		build: ./
-		context: home
-
-	web-notice:
-		build: ./
-		context: notice
-
-	nginx:
-    build: ./nginx
+  web-home:
+    build:
+      context: ./home
+      dockerfile: Dockerfile
+  web-notice:
+    build:
+      context: ./notice
+      dockerfile: Dockerfile
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
     ports:
-      - 80:80
+      - "80:80"
