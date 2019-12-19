@@ -1,7 +1,7 @@
 {
 	"name": "hi-cord-frontend",
 	"version": "0.0.1",
-	"description": "Hi-Cord next Frontend",
+	"description": "Hi-Cord Next Notice for Micro",
 	"main": "index.js",
 	"scripts": {
 		"predev": "rm -rf ./node_modules/.cache dist",
