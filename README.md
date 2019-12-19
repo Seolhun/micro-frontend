@@ -1,5 +1,12 @@
 # Next.js TypeScript project template
 
+## Stacks
+- Typescript
+- NextJS
+- React
+- i18n-Next
+- EmotionJS
+
 ## Requirement
 
 node > 10.12.0
@@ -20,20 +27,16 @@ export { default } from '@controllers/profile'
 ```ts
 export default [
 	{
-		"page": "/musicians",
-		"pattern": "/musicians"
+		"page": "/",
+		"pattern": "/"
 	},
 	{
-		"page": "/musician",
-		"pattern": "/:musicianName"
+		"page": "/notices",
+		"pattern": "/notices"
 	},
-	{
-		"page": "/musician/albums",
-		"pattern": "/:musicianName/albums"
-	},
-	{
-		"page": "/musician/albums/_id",
-		"pattern": "/:musicianName/albums/:albumName"
+		{
+		"page": "/notice",
+		"pattern": "/:noticeName"
 	},
 ]
 ```
@@ -79,8 +82,8 @@ import styled from '@emotion/styled';
 import { ContextProps } from '@src/stores';
 
 export interface LayoutProps {
-  ctx: ContextProps;
   children: React.ReactNode;
+  ctx?: ContextProps;
 }
 
 const LayoutWrapper = styled.div({});
@@ -105,38 +108,31 @@ import Layout from '@layouts/index';
 import { UserStore, UserStoreProps } from '@src/stores';
 import { useRouterType } from '@src/hooks';
 
-interface AlbumProps extends AlbumQuery {
+interface NoticeProps extends NoticeQuery {
   userAgent?: string;
 }
 
-interface AlbumQuery {
-  musicianName?: string;
-  albumName?: string;
+interface NoticeQuery {
+  noticeName?: string;
 }
 
-const AlbumController: NextPage<AlbumProps> = () => {
+const NoticeController: NextPage<NoticeProps> = () => {
   const userStore = React.useContext<UserStoreProps>(UserStore);
-  const { query } = useRouterType<AlbumQuery>();
-  const { musicianName, albumName } = query;
+  const { query } = useRouterType<NoticeQuery>();
+  const { noticeName } = query;
 
-  return (
-    <Layout ctx={{ userStore }}>
-      <div>{musicianName}</div>
-      <div>{albumName}</div>
-      Album
-    </Layout>
-  );
+  return <Layout ctx={{ userStore }}>{noticeName} of Notice</Layout>;
 };
 
-AlbumController.getInitialProps = async ({ req }: NextPageContext) => {
+NoticeController.getInitialProps = async ({ req }: NextPageContext) => {
   const userAgent = req ? req.headers['user-agent'] : navigator.userAgent;
   return { userAgent };
 };
 
-export default AlbumController;
+export default NoticeController;
 ```
 
-Then, you can access `/musicians/Seolhun/albums/goods`!
+Then, you can access `/notices/NextJS`!
 
 ### Process
 router > pages > controllers > layout > others
