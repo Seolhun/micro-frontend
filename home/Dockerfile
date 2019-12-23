@@ -9,7 +9,7 @@ RUN yarn build
 FROM mhart/alpine-node:latest AS RUNNER
 WORKDIR /app
 COPY --from=builder ./app/package.json .
-COPY --from=builder ./app/.next .next
+COPY --from=builder ./app/.next ./.next
 COPY --from=builder ./app/node_modules ./node_modules
 
 EXPOSE 4000

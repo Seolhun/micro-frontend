@@ -1,10 +1,6 @@
 version: "3.7"
 services:
-  # ELB
-  gateway:
-    build:
-      context: ./gateway
-      dockerfile: Dockerfile
+  # GATEWAY
   gateway-nginx:
     build:
       context: ./gateway/nginx
@@ -14,30 +10,36 @@ services:
     links:
       - gateway
 
-  # HOME
-  home:
+  gateway:
     build:
-      context: ./home
+      context: ./gateway
       dockerfile: Dockerfile
+    links:
+      - home-nginx
+      - communities-nginx
+
+  # HOME
   home-nginx:
     build:
       context: ./home/nginx
       dockerfile: Dockerfile
-    ports:
-      - 4080:4080
     links:
       - home
 
+  home:
+    build:
+      context: ./home
+      dockerfile: Dockerfile
+
   # COMMUNITIES
+  communities-nginx:
+    build:
+      context: ./communities/nginx
+      dockerfile: Dockerfile
+    links:
+      - communities
+
   communities:
     build:
       context: ./communities
       dockerfile: Dockerfile
-  communities-nginx:
-    build:
-      context: ./nginx
-      dockerfile: Dockerfile
-    ports:
-      - 5080:5080
-    links:
-      - communities
