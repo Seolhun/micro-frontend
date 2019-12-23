@@ -3,23 +3,29 @@ import React from 'react';
 import { NextPage, NextPageContext } from 'next';
 
 import Layout from '@layouts/index';
-import { UserStore, UserStoreProps } from '@src/stores';
 import { useRouterType } from '@src/hooks';
+import { Meta } from '@src/components';
 
 interface CommunityProps extends CommunityQuery {
   userAgent?: string;
 }
 
 interface CommunityQuery {
-  noticeName?: string;
+  communityName?: string;
 }
 
 const CommunityController: NextPage<CommunityProps> = () => {
-  const userStore = React.useContext<UserStoreProps>(UserStore);
   const { query } = useRouterType<CommunityQuery>();
-  const { noticeName } = query;
+  const { communityName } = query;
 
-  return <Layout ctx={{ userStore }}>{noticeName} of Community</Layout>;
+  return (
+    <Layout>
+      <Meta>
+        <title>{communityName} of Communities Hi-Cord</title>
+      </Meta>
+      {communityName} of Communities
+    </Layout>
+  );
 };
 
 CommunityController.getInitialProps = async ({ req }: NextPageContext) => {

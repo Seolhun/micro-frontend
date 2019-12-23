@@ -9,12 +9,12 @@ export const root = () => ({
 /**
  * @Notices
  */
-export const notices = () => ({
-  as: `/notices`,
-  href: `/notices`,
+export const communities = () => ({
+  as: `/communities`,
+  href: `/communities`,
 });
 
-export const noticeInnotices = () => ({
-  as: `/notices/notice`,
-  href: `/notices/:noticeName`,
+export const communityIncommunities = () => ({
+  as: `/communities/community`,
+  href: `/communities/:communityName`,
 });

@@ -5,7 +5,7 @@ import helmet from 'helmet';
 
 import config from './config';
 
-const isDev = process.env.NODE_ENV !== 'production';
+// const isDev = process.env.NODE_ENV !== 'production';
 
 /**
  * @Configurations
@@ -35,21 +35,16 @@ app.set('trust proxy', 1);
 /**
  * @Routes
  */
-app.get('/ping', (_req, res) => {
-  console.error('@@@', _req);
+app.use('/ping', (_req, res) => {
   res.send('This is Hi-Cord ELB Router API');
 });
 
-// All request is passed
-app.use('*', (req, _res, next) => {
-  if (isDev) {
-    console.log(req);
-  }
+app.use('*', (_req, _res, next) => {
   next();
 });
 
 /**
- * @Runn
+ * @Run
  */
 app
   .listen(config.HTTP_PORT, () => {

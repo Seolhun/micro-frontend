@@ -41,8 +41,8 @@ app.prepare().then(() => {
   /**
    * Page Routes
    */
-  routes.forEach(({ page, routePath }) => {
-    server.get(routePath, (req, res) => {
+  routes.map(({ page, path }) => {
+    server.get(path, (req, res) => {
       return app.render(req, res, page, { ...req.query, ...req.params });
     });
   });

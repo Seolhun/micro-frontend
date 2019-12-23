@@ -4,10 +4,10 @@ export default [
    */
   {
     page: '/communities',
-    routePath: '/communities',
+    path: '/communities',
   },
   {
     page: '/communities/community',
-    routePath: '/communities/:communityName',
+    path: '/communities/:communityName',
   },
 ];

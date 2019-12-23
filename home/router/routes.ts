@@ -1,17 +1,17 @@
 export default [
   {
     page: '/',
-    routePath: '/',
+    path: '/',
   },
   /**
    * @Notices
    */
   {
     page: '/notices',
-    routePath: '/notices',
+    path: '/notices',
   },
   {
     page: '/notices/notice',
-    routePath: '/notices/:noticeName',
+    path: '/notices/:noticeName',
   },
 ];

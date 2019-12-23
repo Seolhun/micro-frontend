@@ -3,8 +3,8 @@ import React from 'react';
 import { NextPage, NextPageContext } from 'next';
 
 import Layout from '@layouts/index';
-import { UserStore, UserStoreProps } from '@src/stores';
 import { useRouterType } from '@src/hooks';
+import { Meta } from '@src/components';
 
 interface NoticeProps extends NoticeQuery {
   userAgent?: string;
@@ -15,11 +15,17 @@ interface NoticeQuery {
 }
 
 const NoticeController: NextPage<NoticeProps> = () => {
-  const userStore = React.useContext<UserStoreProps>(UserStore);
   const { query } = useRouterType<NoticeQuery>();
   const { noticeName } = query;
 
-  return <Layout ctx={{ userStore }}>{noticeName} of Notice</Layout>;
+  return (
+    <Layout>
+      <Meta>
+        <title>{noticeName} of Notices Hi-Cord</title>
+      </Meta>
+      {noticeName} of Notices
+    </Layout>
+  );
 };
 
 NoticeController.getInitialProps = async ({ req }: NextPageContext) => {
