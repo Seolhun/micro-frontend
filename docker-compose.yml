@@ -3,43 +3,49 @@ services:
   # GATEWAY
   gateway-nginx:
     build:
-      context: ./gateway/nginx
-      dockerfile: Dockerfile
+      context: ./gateway-nginx
     ports:
       - 80:80
     links:
       - gateway
+      - home
+      - communities
 
   gateway:
     build:
       context: ./gateway
-      dockerfile: Dockerfile
     links:
       - home-nginx
       - communities-nginx
+    ports:
+      - 3000:3000
 
   # HOME
   home-nginx:
     build:
       context: ./home/nginx
-      dockerfile: Dockerfile
     links:
       - home
+    ports:
+      - 4080:4080
 
   home:
     build:
       context: ./home
-      dockerfile: Dockerfile
+    ports:
+      - 4000:4000
 
   # COMMUNITIES
   communities-nginx:
     build:
       context: ./communities/nginx
-      dockerfile: Dockerfile
     links:
       - communities
+    ports:
+      - 5080:5080
 
   communities:
     build:
       context: ./communities
-      dockerfile: Dockerfile
+    ports:
+      - 5000:5000

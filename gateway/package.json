@@ -7,15 +7,15 @@
   },
   "name": "@seolhun/gateway",
   "version": "0.0.1",
-	"description": "Hi-Cord Next Gateway for Micro",
+  "description": "Hi-Cord Next Gateway for Micro",
   "main": "./dist/src/index.js",
   "scripts": {
-		"prebundle": "rm -rf dist",
+    "prebundle": "rm -rf dist",
     "bundle": "node build/build.js",
     "prebuild": "rm -rf dist",
     "build": "tsc",
-		"dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
-		"start": "node dist/src/index.js",
+    "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+    "start": "node dist/src/index.js",
     "test": "jest"
   },
   "dependencies": {
@@ -24,6 +24,7 @@
     "express": "^4.17.1",
     "express-session": "^1.15.6",
     "helmet": "^3.11.0",
+    "http-proxy-middleware": "^0.20.0",
     "lodash": "^4.17.15",
     "nodemon": "^2.0.0",
     "winston": "^3.2.1"
@@ -34,6 +35,7 @@
     "@types/express-session": "^1.15.16",
     "@types/graphql": "^14.5.0",
     "@types/helmet": "^0.0.45",
+    "@types/http-proxy-middleware": "^0.19.3",
     "@types/jest": "^23.3.11",
     "@types/lodash": "^4.14.149",
     "@types/node": "^10.12.18",
