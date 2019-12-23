@@ -31,12 +31,12 @@ export default [
 		"pattern": "/"
 	},
 	{
-		"page": "/notices",
-		"pattern": "/notices"
+		"page": "/communitys",
+		"pattern": "/communitys"
 	},
 		{
-		"page": "/notice",
-		"pattern": "/:noticeName"
+		"page": "/community",
+		"pattern": "/:communityName"
 	},
 ]
 ```
@@ -108,31 +108,31 @@ import Layout from '@layouts/index';
 import { UserStore, UserStoreProps } from '@src/stores';
 import { useRouterType } from '@src/hooks';
 
-interface NoticeProps extends NoticeQuery {
+interface CommunityProps extends CommunityQuery {
   userAgent?: string;
 }
 
-interface NoticeQuery {
-  noticeName?: string;
+interface CommunityQuery {
+  communityName?: string;
 }
 
-const NoticeController: NextPage<NoticeProps> = () => {
+const CommunityController: NextPage<CommunityProps> = () => {
   const userStore = React.useContext<UserStoreProps>(UserStore);
-  const { query } = useRouterType<NoticeQuery>();
-  const { noticeName } = query;
+  const { query } = useRouterType<CommunityQuery>();
+  const { communityName } = query;
 
-  return <Layout ctx={{ userStore }}>{noticeName} of Notice</Layout>;
+  return <Layout ctx={{ userStore }}>{communityName} of Community</Layout>;
 };
 
-NoticeController.getInitialProps = async ({ req }: NextPageContext) => {
+CommunityController.getInitialProps = async ({ req }: NextPageContext) => {
   const userAgent = req ? req.headers['user-agent'] : navigator.userAgent;
   return { userAgent };
 };
 
-export default NoticeController;
+export default CommunityController;
 ```
 
-Then, you can access `/notices/NextJS`!
+Then, you can access `/communitys/NextJS`!
 
 ### Process
 router > pages > controllers > layout > others

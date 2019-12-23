@@ -1,17 +1,13 @@
 export default [
-  {
-    page: '/',
-    routePath: '/',
-  },
   /**
-   * @Notices
+   * @Communities
    */
   {
-    page: '/notices',
-    routePath: '/notices',
+    page: '/communities',
+    routePath: '/communities',
   },
   {
-    page: '/notices/notice',
-    routePath: '/notices/:noticeName',
+    page: '/communities/community',
+    routePath: '/communities/:communityName',
   },
 ];

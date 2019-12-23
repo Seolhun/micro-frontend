@@ -1,1 +1,1 @@
-export { default } from '@controllers/notices/notice';
+export { default } from '@controllers/communities/community';
