@@ -5,9 +5,9 @@
     "email": "shun10116@gmail.com",
     "url": "https://github.com/Seolhun"
   },
-  "name": "@seolhun/elb",
+  "name": "@seolhun/gateway",
   "version": "0.0.1",
-	"description": "Hi-Cord Next ELB for Micro",
+	"description": "Hi-Cord Next Gateway for Micro",
   "main": "./dist/src/index.js",
   "scripts": {
 		"prebundle": "rm -rf dist",
