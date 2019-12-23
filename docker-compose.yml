@@ -8,8 +8,6 @@ services:
       - 80:80
     links:
       - gateway
-      - home
-      - communities
       - home-nginx
       - communities-nginx
 
@@ -22,7 +20,6 @@ services:
       - home-nginx
       - communities-nginx
 
-
   # HOME
   home-nginx:
     build:
@@ -31,7 +28,6 @@ services:
       - 4080:4080
     links:
       - home
-
 
   home:
     build:
@@ -47,7 +43,6 @@ services:
       - 5080:5080
     links:
       - communities
-
 
   communities:
     build:
