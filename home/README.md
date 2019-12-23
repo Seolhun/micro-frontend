@@ -17,26 +17,21 @@ After the cli ran, a file is created under the pages dir.
 
 The file includes only default export from the controllers.
 
-```ts
-// pages/profile/index.tsx
-export { default } from '@controllers/profile'
-
-```
 ### Routes
 
 ```ts
 export default [
 	{
 		"page": "/",
-		"pattern": "/"
+		"path": "/"
 	},
 	{
 		"page": "/notices",
-		"pattern": "/notices"
+		"path": "/notices"
 	},
 		{
 		"page": "/notice",
-		"pattern": "/:noticeName"
+		"path": "/:noticeName"
 	},
 ]
 ```

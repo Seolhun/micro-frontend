@@ -39,7 +39,8 @@ app.use('/ping', (_req, res) => {
   res.send('This is Hi-Cord ELB Router API');
 });
 
-app.use('*', (_req, _res, next) => {
+app.use('*', (req, _res, next) => {
+  console.log('@@ @@', req.baseUrl);
   next();
 });
 

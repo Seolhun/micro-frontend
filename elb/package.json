@@ -10,10 +10,10 @@
 	"description": "Hi-Cord Next ELB for Micro",
   "main": "./dist/src/index.js",
   "scripts": {
+		"prebundle": "rm -rf dist",
     "bundle": "node build/build.js",
-    "prebundle": "rm -rf dist",
-    "build": "tsc",
     "prebuild": "rm -rf dist",
+    "build": "tsc",
 		"dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
 		"start": "node dist/src/index.js",
     "test": "jest"
@@ -31,7 +31,6 @@
   "devDependencies": {
     "@types/cors": "^2.8.6",
     "@types/express": "^4.17.2",
-    "@types/express-graphql": "^0.9.0",
     "@types/express-session": "^1.15.16",
     "@types/graphql": "^14.5.0",
     "@types/helmet": "^0.0.45",

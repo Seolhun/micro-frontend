@@ -12,14 +12,13 @@
 	"scripts": {
 		"predev": "rm -rf ./node_modules/.cache dist",
 		"dev": "nodemon",
+		"prebuild": "rm -rf .next && rm -rf .dist",
 		"build": "next build",
 		"start": "next start -p 5000"
 	},
 	"keywords": [],
 	"dependencies": {
 		"@emotion/core": "^10.0.22",
-		"@emotion/keyframes": "^0.9.1",
-		"@emotion/provider": "^0.11.2",
 		"@emotion/styled": "^10.0.23",
 		"@zeit/next-typescript": "^1.1.1",
 		"express": "^4.17.1",
