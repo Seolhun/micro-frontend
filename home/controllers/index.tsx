@@ -17,7 +17,7 @@ const HomeController: NextPage<HomeProps> = ({ namespacesRequired }) => {
   return (
     <Layout>
       <Meta>
-        <title>Hi-Cord</title>
+        <title>Hi-Cord Home</title>
       </Meta>
       <button type="button" onClick={() => i18n.changeLanguage(i18n.language === 'en' ? 'ko' : 'en')}>
         {t('banner')}

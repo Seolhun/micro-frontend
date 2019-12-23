@@ -4,23 +4,23 @@ import { NextPage, NextPageContext } from 'next';
 import Layout from '@layouts/index';
 import { Meta } from '@src/components';
 
-interface NoticeListControllerProps {
+interface CommunityListControllerProps {
   userAgent?: string;
   namespacesRequired?: string[];
 }
 
-const NoticeListController: NextPage<NoticeListControllerProps> = () => {
+const CommunityListController: NextPage<CommunityListControllerProps> = () => {
   return (
     <Layout>
       <Meta>
-        <title>Notices on Hi-Cord</title>
+        <title>Communities on Hi-Cord</title>
       </Meta>
-      Notices
+      Communities
     </Layout>
   );
 };
 
-NoticeListController.getInitialProps = async ({ req }: NextPageContext) => {
+CommunityListController.getInitialProps = async ({ req }: NextPageContext) => {
   const userAgent = req ? req.headers['user-agent'] : navigator.userAgent;
 
   return {
@@ -29,4 +29,4 @@ NoticeListController.getInitialProps = async ({ req }: NextPageContext) => {
   };
 };
 
-export default NoticeListController;
+export default CommunityListController;

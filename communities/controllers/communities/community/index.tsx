@@ -6,25 +6,25 @@ import Layout from '@layouts/index';
 import { UserStore, UserStoreProps } from '@src/stores';
 import { useRouterType } from '@src/hooks';
 
-interface NoticeProps extends NoticeQuery {
+interface CommunityProps extends CommunityQuery {
   userAgent?: string;
 }
 
-interface NoticeQuery {
+interface CommunityQuery {
   noticeName?: string;
 }
 
-const NoticeController: NextPage<NoticeProps> = () => {
+const CommunityController: NextPage<CommunityProps> = () => {
   const userStore = React.useContext<UserStoreProps>(UserStore);
-  const { query } = useRouterType<NoticeQuery>();
+  const { query } = useRouterType<CommunityQuery>();
   const { noticeName } = query;
 
-  return <Layout ctx={{ userStore }}>{noticeName} of Notice</Layout>;
+  return <Layout ctx={{ userStore }}>{noticeName} of Community</Layout>;
 };
 
-NoticeController.getInitialProps = async ({ req }: NextPageContext) => {
+CommunityController.getInitialProps = async ({ req }: NextPageContext) => {
   const userAgent = req ? req.headers['user-agent'] : navigator.userAgent;
   return { userAgent };
 };
 
-export default NoticeController;
+export default CommunityController;

@@ -1,6 +1,12 @@
 {
-	"name": "hi-cord-frontend",
-	"version": "0.0.1",
+  "license": "MIT",
+  "author": {
+    "name": "Seolhun",
+    "email": "shun10116@gmail.com",
+    "url": "https://github.com/Seolhun"
+  },
+  "name": "@seolhun/elb",
+  "version": "0.0.1",
 	"description": "Hi-Cord Next Notice for Micro",
 	"main": "index.js",
 	"scripts": {
@@ -10,8 +16,6 @@
 		"start": "next start -p 5000"
 	},
 	"keywords": [],
-	"author": "",
-	"license": "MIT",
 	"dependencies": {
 		"@emotion/core": "^10.0.22",
 		"@emotion/keyframes": "^0.9.1",
