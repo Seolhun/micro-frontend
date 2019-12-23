@@ -3,31 +3,35 @@ services:
   # GATEWAY
   gateway-nginx:
     build:
-      context: ./gateway-nginx
+      context: ./gateway/nginx
     ports:
       - 80:80
     links:
       - gateway
       - home
       - communities
+      - home-nginx
+      - communities-nginx
 
   gateway:
     build:
       context: ./gateway
+    ports:
+      - 3000:3000
     links:
       - home-nginx
       - communities-nginx
-    ports:
-      - 3000:3000
+
 
   # HOME
   home-nginx:
     build:
       context: ./home/nginx
-    links:
-      - home
     ports:
       - 4080:4080
+    links:
+      - home
+
 
   home:
     build:
@@ -39,10 +43,11 @@ services:
   communities-nginx:
     build:
       context: ./communities/nginx
-    links:
-      - communities
     ports:
       - 5080:5080
+    links:
+      - communities
+
 
   communities:
     build:
