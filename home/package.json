@@ -14,6 +14,7 @@
 		"dev": "nodemon",
 		"prebuild": "rm -rf .next && rm -rf .dist",
 		"build": "next build",
+		"postbuild": "docker build -t home-next .",
 		"start": "next start -p 4000"
 	},
 	"keywords": [],
