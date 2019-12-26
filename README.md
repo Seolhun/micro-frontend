@@ -1,5 +1,15 @@
 # Next.js TypeScript mircro project template
 
+## Requirements
+- NodeJS > 10
+- Docker
+
+## Options
+- Docker hub
+  - These images are stored in here
+- Travis CI
+  - These images are pushed into docker hub using Travis CI
+
 ## Mirceo Apps Hierarchy
 - `Nginx` Router handler
 	- 80 port
@@ -24,6 +34,17 @@ yarn build
 docker-compose up -d
 ```
 
+---
+
+
+### Travis CI
+Connect Travis CI with Github Repo
+
+### Docker Hub
+Set Username and Password in `Travis setting` and Change .travis.yml as your configuration.
+
+---
+
 
 ## Kubenetes
 
@@ -41,3 +62,6 @@ brew install kubectl
 brew install minikube
 minikube start
 ```
+
+## Refs
+- [Travis With Docker](https://docs.travis-ci.com/user/docker/)
