@@ -10,31 +10,43 @@ services:
 
 jobs:
   include:
-    - if: branch = master || develop
+    # Install and Test
+    - stage: gateway-install-test
+      script: cd gateway && yarn install && yarn test
 
-      # Install and build
+    - stage: home-install-test
+      script: cd home && yarn install && yarn test
+
+    - stage: communities-install-test
+      script: cd communities && yarn install && yarn test
+
+    # Install and Build
+    - if: branch = master || develop
       stage: gateway-install-build
       script: cd gateway && yarn install && yarn build
 
+    - if: branch = master || develop
       stage: home-install-build
       script: cd home && yarn install && yarn build
 
+    - if: branch = master || develop
       stage: communities-install-build
       script: cd communities && yarn install && yarn build
 
     # Docker build and push
-
     - if: branch = master
-
       stage: gateway-docker-build
       env:
         - DOCKER_REPO=shooney/gateway-next
       script: cd gateway && docker build -t $DOCKER_REPO . && ../bin/deploy.sh
 
+    - if: branch = master
       stage: home-docker-build
       env:
         - DOCKER_REPO=shooney/home-next
       script: cd home && docker build -t $DOCKER_REPO . && ../bin/deploy.sh
+
+    - if: branch = master
       stage: communities-docker-build
       env:
         - DOCKER_REPO=shooney/communities-next

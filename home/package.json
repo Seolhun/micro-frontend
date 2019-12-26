@@ -14,7 +14,8 @@
 		"dev": "nodemon",
 		"prebuild": "rm -rf .next && rm -rf .dist",
 		"build": "next build",
-		"start": "next start -p 4000"
+		"start": "next start -p 4000",
+    "test": "echo \"Error: no test specified\""
 	},
 	"keywords": [],
 	"dependencies": {
