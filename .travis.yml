@@ -10,21 +10,15 @@ services:
 
 jobs:
   include:
-    # Install
-    - stage: gateway-install
-      script: cd gateway && yarn install
-    - stage: home-install
-      script: cd home && yarn install
-    - stage: communities-install
-      script: cd communities && yarn install
+    # Install and build
+    - stage: gateway-install-build
+      script: cd gateway && yarn install && yarn build
 
-    # Build
-    - stage: gateway-build
-      script: cd gateway && yarn build
-    - stage: home-build
-      script: cd home && yarn build
-    - stage: communities-build
-      script: cd communities && yarn build
+    - stage: home-install-build
+      script: cd home && yarn install && yarn build
+
+    - stage: communities-install-build
+      script: cd communities && yarn install && yarn build
 
     # Docker build and push
     - stage: gateway-docker-build
@@ -32,11 +26,13 @@ jobs:
         - DOCKER_REPO=shooney/gateway-next
       script: cd gateway && docker build -t $DOCKER_REPO .
     - script: bin/deploy.sh
+
     - stage: home-docker-build
       env:
         - DOCKER_REPO=shooney/home-next
       script: cd home && docker build -t $DOCKER_REPO .
     - script: bin/deploy.sh
+
     - stage: communities-docker-build
       env:
         - DOCKER_REPO=shooney/communities-next
