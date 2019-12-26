@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-echo "$DOCKER_REPO"
+set -e
+echo "DOCKER_REPO - $DOCKER_REPO"
 echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
 # https://docs.travis-ci.com/user/environment-variables/#default-environment-variables
