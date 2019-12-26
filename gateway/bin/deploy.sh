@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-DOCKER_REPO="shooney/gateway-next"
 echo "$DOCKER_REPO"
 echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
