@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
-set -e
-
+DOCKER_REPO="shooney/communities-next"
+echo "$DOCKER_REPO"
 echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-
-DOCKER_REPO = "shooney/home-communities"
 
 # https://docs.travis-ci.com/user/environment-variables/#default-environment-variables
 if [ -z "$TRAVIS_PULL_REQUEST" ] || [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
