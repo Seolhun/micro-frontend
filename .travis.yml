@@ -26,28 +26,22 @@ jobs:
     - stage: communities-build
       script: cd communities && yarn build
 
-    # Docker build
+    # Docker build and push
     - stage: gateway-docker-build
       env:
         - DOCKER_REPO=shooney/gateway-next
       script: cd gateway && docker build -t $DOCKER_REPO .
+    - script: bin/deploy.sh
     - stage: home-docker-build
       env:
         - DOCKER_REPO=shooney/home-next
       script: cd home && docker build -t $DOCKER_REPO .
+    - script: bin/deploy.sh
     - stage: communities-docker-build
       env:
         - DOCKER_REPO=shooney/communities-next
       script: cd communities && docker build -t $DOCKER_REPO .
-
-    # Docker Push
-    - stage: gateway-docker-push
-      script: cd gateway && bin/deploy.sh
-    - stage: home-docker-push
-      script: cd home && bin/deploy.sh
-    - stage: communities-docker-push
-      script: cd communities && bin/deploy.sh
-
+    - script: bin/deploy.sh
 notifications:
   email:
     - shun10116@gmail.com
