@@ -8,8 +8,21 @@ node_js:
 services:
   - docker
 
-script:
-  - yarn build
+jobs:
+  include:
+    - stage: gateway-install
+      script: cd gateway && yarn install
+    - stage: home-install
+      script: cd ../home && yarn install
+    - stage: communities-install
+      script: cd ../communities && yarn install && cd ..
+
+    - stage: gateway-docker
+      script: cd gateway && bin/travis/deploy.sh
+    - stage: home-install
+      script: cd ../home && bin/travis/deploy.sh
+    - stage: communities-install
+      script: cd ../communities && bin/travis/deploy.sh
 
 notifications:
   email:

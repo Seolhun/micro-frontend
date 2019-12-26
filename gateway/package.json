@@ -14,7 +14,6 @@
     "bundle": "node build/build.js",
     "prebuild": "rm -rf dist",
 		"build": "tsc",
-		"postbuild": "docker build -t gateway .",
     "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
 		"start": "node dist/src/index.js",
     "test": "jest"
