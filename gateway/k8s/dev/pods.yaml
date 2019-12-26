@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: home-next-pods
+  labels:
+    name: home-next-pods
+spec:
+  containers:
+    - name: home-next-pods
+      image: seolhun/home-next-pods
+      resources:
+        limits:
+          memory: "128Mi"
+          cpu: "500m"
+      ports:
+        - containerPort: 4080

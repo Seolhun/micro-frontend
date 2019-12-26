@@ -1,0 +1,32 @@
+sudo: false
+
+language: node_js
+
+node_js:
+  - "10"
+
+services:
+  - docker
+
+jobs:
+  include:
+    - stage: gateway-install
+      script: cd gateway && yarn install
+    - stage: home-install
+      script: cd ../home && yarn install
+    - stage: communities-install
+      script: cd ../communities && yarn install && cd ..
+
+    - stage: gateway-docker
+      script: cd gateway && bin/travis/deploy.sh
+    - stage: home-install
+      script: cd ../home && bin/travis/deploy.sh
+    - stage: communities-install
+      script: cd ../communities && bin/travis/deploy.sh
+
+notifications:
+  email:
+    - shun10116@gmail.com
+  slack:
+    rooms:
+      - hi-cordworkspace:EC6Q4SIRTddzUEE0rMDXrSl6#dev-travis

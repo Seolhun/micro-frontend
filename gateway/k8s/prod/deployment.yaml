@@ -1,0 +1,35 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+	name: dev-home-next-deployment
+	labels:
+		name: dev-home-next-deployment
+spec:
+	strategy:
+		rollingUpdate:
+			maxSurge: 1
+			maxUnavailable: 1
+		type: RollingUpdate
+	template:
+		metadata:
+			labels:
+				name: dev-home-next-deployment
+		spec:
+			containers:
+			- image: seolhun/dev-home-next-deployment
+				name: dev-home-next-deployment
+				resources:
+					requests:
+						cpu: "20m"
+						memory: "55M"
+				livenessProbe:
+					httpGet:
+						path: /ping
+						port: 4080
+					initialDelaySeconds: 90
+					timeoutSeconds: 10
+				ports:
+				- containerPort: 4080
+					name: dev-home-next-deployment-port
+			restartPolicy: Always
+			imagePullPolicy: Always

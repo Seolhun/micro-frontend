@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: home-next-service
+spec:
+  selector:
+    app: home-next-service
+  type: NodePort
+  ports:
+    - name: home-next-service-port
+      port: 80
+      targetPort: 8080

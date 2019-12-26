@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"build": "cd home && yarn build && cd ../notice && yarn build",
-		"dev": "cd home && yarn dev && cd ../notice && yarn dev"
+		"build": "cd home && yarn build && cd ../communities && yarn build && cd ../gateway && yarn build",
+		"dev": "cd home && yarn dev && cd ../communities && yarn dev && cd ../gateway && yarn dev"
   },
   "repository": {
     "type": "git",
