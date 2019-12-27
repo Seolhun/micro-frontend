@@ -1,0 +1,66 @@
+version: "3.7"
+services:
+  # GATEWAY
+  load-balancer-nginx:
+    build:
+      context: ./load-balancer/nginx
+    ports:
+      - 80:80
+    links:
+      - api-gateway-nginx
+      - client-gateway-nginx
+
+  # API-GATEWAY
+  api-gateway-nginx:
+    build:
+      context: ./api-gateway/nginx
+    ports:
+      - 3080:3080
+    links:
+      - api-gateway
+
+  api-gateway:
+    build:
+      context: ./api-gateway
+    ports:
+      - 3000:3000
+
+  # CLIENT-GATEWAY
+  client-gateway-nginx:
+    build:
+      context: ./client-gateway/nginx
+    ports:
+      - 8080:8080
+    links:
+      - home-nginx
+      - communities-nginx
+
+  # HOME
+  home-nginx:
+    build:
+      context: ./home/nginx
+    ports:
+      - 4080:4080
+    links:
+      - home
+
+  home:
+    build:
+      context: ./home
+    ports:
+      - 4000:4000
+
+  # COMMUNITIES
+  communities-nginx:
+    build:
+      context: ./communities/nginx
+    ports:
+      - 5080:5080
+    links:
+      - communities
+
+  communities:
+    build:
+      context: ./communities
+    ports:
+      - 5000:5000

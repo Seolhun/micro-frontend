@@ -1,0 +1,29 @@
+{
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"target": "esnext",
+		"module": "commonjs",
+		"allowJs": true,
+		"strict": true,
+		"jsx": "react",
+		"noImplicitAny": false,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"moduleResolution": "node",
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"baseUrl": ".",
+		"noEmit": false,
+		"outDir": "dist",
+		"typeRoots": [
+			"./node_modules/@types",
+			"./typings"
+		]
+	},
+	"include": [
+		"server.ts",
+		"./typings/*"
+	]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "next-micro-template",
+  "version": "1.0.0",
+  "description": "To build Mircro apps with nextjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\"",
+    "build": "cd home && yarn build && cd ../communities && yarn build && cd ../api-gateway && yarn build",
+    "dev": "cd home && yarn dev && cd ../communities && yarn dev && cd ../api-gateway && yarn dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Seolhun/micro-frontend.git"
+  },
+  "author": "Seolhun",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Seolhun/micro-frontend/issues"
+  },
+  "homepage": "https://github.com/Seolhun/micro-frontend#readme"
+}
