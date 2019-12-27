@@ -7,13 +7,6 @@
 - NodeJS > 10
 - Docker
 
-## Options
-
-- Docker hub
-  - These images are stored in here
-- Travis CI
-  - These images are pushed into docker hub using Travis CI
-
 ## Mirceo Apps Hierarchy
 
 - `LoadBalancer - Ingress Nginx`
