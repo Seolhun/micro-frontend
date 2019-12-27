@@ -23,8 +23,7 @@
     - 3080 port
     - `API-Gateway` app
       - 3000 port
-  - `Client-Gateway - Nginx`
-    - 8080 port
+  - Clients
     - `Home - Nginx`
       - 4080 port
       - `Home` app
