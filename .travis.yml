@@ -15,22 +15,22 @@ jobs:
     #############################
     # Install and Test
     #############################
-    ## API Server
-    - stage: api-server-install-test
+    - stage: Tests
+      name: API server Unit Test
       script:
         - cd api-server
         - yarn install
         - yarn test
 
-    ## Home
-    - stage: home-install-test
+    - stage: Tests
+      name: Home client Unit Test
       script:
         - cd home
         - yarn install
         - yarn test
 
-    ## Communities
-    - stage: communities-install-test
+    - stage: Tests
+      name: Communities client Unit Test
       script:
         - cd communities
         - yarn install
