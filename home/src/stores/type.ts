@@ -1,7 +1,7 @@
 export interface ContextProps {
-	userStore: UserStoreProps
+  userStore: UserStoreProps;
 }
 
 export interface UserStoreProps {
-	userId: string;
+  userId: string;
 }

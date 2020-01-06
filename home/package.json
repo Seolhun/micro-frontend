@@ -1,12 +1,12 @@
 {
-  "license": "MIT",
-  "author": {
-    "name": "Seolhun",
-    "email": "shun10116@gmail.com",
-    "url": "https://github.com/Seolhun"
-  },
-  "name": "@seolhun/home",
-  "version": "0.0.1",
+	"license": "MIT",
+	"author": {
+		"name": "Seolhun",
+		"email": "shun10116@gmail.com",
+		"url": "https://github.com/Seolhun"
+	},
+	"name": "@seolhun/home",
+	"version": "0.0.1",
 	"description": "Hi-Cord Next Home for Micro",
 	"main": "index.js",
 	"scripts": {
@@ -15,34 +15,53 @@
 		"prebuild": "rm -rf .next && rm -rf .dist",
 		"build": "next build",
 		"start": "next start -p 4000",
-		"test": "echo \"Error: no test specified\"",
+		"test": "jest",
 		"prettier": "prettier --write '**/*.{ts,tsx,js,jsx}'"
 	},
 	"keywords": [],
-	"dependencies": {
-		"@emotion/core": "^10.0.22",
-		"@emotion/styled": "^10.0.23",
-		"@zeit/next-typescript": "^1.1.1",
-		"express": "^4.17.1",
-		"express-session": "^1.17.0",
-		"next": "^9.1.4",
-		"next-i18next": "^2.1.1",
-		"ramda": "^0.26.1",
-		"react": "^16.12.0",
-		"react-dom": "^16.12.0"
-	},
-	"devDependencies": {
-		"@types/express": "^4.17.0",
-		"@types/express-session": "^1.15.16",
-		"@types/next": "^8.0.5",
-		"@types/node": "^12.0.7",
-		"@types/ramda": "^0.26.38",
-		"@types/react": "^16.8.19",
-		"@types/react-dom": "^16.8.4",
-		"nodemon": "^1.19.4",
-		"pluralize": "^8.0.0",
-		"ts-node": "^8.5.2",
-		"typescript": "^3.7.2",
-		"url-loader": "^2.2.0"
-	}
+  "dependencies": {
+    "@emotion/core": "^10.0.22",
+    "@emotion/styled": "^10.0.23",
+    "@zeit/next-typescript": "^1.1.1",
+    "axios": "^0.19.0",
+    "dayjs": "^1.8.18",
+    "express": "^4.17.1",
+    "mobx": "4",
+    "mobx-react-lite": "^1.5.2",
+    "next": "^9.1.4",
+    "next-i18next": "^2.1.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-hook-form": "^4.4.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/plugin-proposal-decorators": "^7.7.4",
+    "@babel/plugin-syntax-dynamic-import": "^7.7.4",
+    "@babel/plugin-transform-arrow-functions": "^7.7.4",
+    "@babel/plugin-transform-async-to-generator": "^7.7.4",
+    "@babel/plugin-transform-classes": "^7.7.4",
+    "@babel/plugin-transform-destructuring": "^7.7.4",
+    "@babel/plugin-transform-literals": "^7.7.4",
+    "@babel/plugin-transform-react-constant-elements": "^7.7.4",
+    "@babel/plugin-transform-spread": "^7.7.4",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-react": "^7.7.4",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.0",
+    "@types/express": "^4.17.0",
+    "@types/jest": "^24.0.25",
+    "@types/next": "^8.0.5",
+    "@types/node": "^12.0.7",
+    "@types/react": "^16.8.19",
+    "@types/react-dom": "^16.8.4",
+    "jest": "^24.9.0",
+    "nodemon": "^1.19.4",
+    "pluralize": "^8.0.0",
+    "prettier": "^1.19.1",
+    "ts-jest": "^24.2.0",
+    "ts-node": "^8.5.2",
+    "typescript": "^3.7.2",
+    "url-loader": "^2.2.0"
+  }
 }

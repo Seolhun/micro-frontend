@@ -1,1 +1,1 @@
-export * from './useRouterType'
+export * from './useRouterType';

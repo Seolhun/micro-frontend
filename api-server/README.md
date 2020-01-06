@@ -1,4 +1,4 @@
-# Micro API-GateWay
+# Micro API-Server
 
 ## Install
 

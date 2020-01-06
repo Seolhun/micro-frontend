@@ -1,9 +1,12 @@
 {
   "banner": "배너",
   "change-locale": "언어 변경",
-  "auth": {
-    "login": "Login",
-    "logout": "Logout"
+  "locales": {
+    "en": "영어",
+    "ko": "한국어"
   },
-  "google": "Google"
+  "auth": {
+    "login": "로그인",
+    "logout": "로그아웃"
+  }
 }

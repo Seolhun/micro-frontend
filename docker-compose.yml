@@ -1,32 +1,29 @@
 version: "3.7"
 services:
-  # GATEWAY
   load-balancer-nginx:
     build:
       context: ./load-balancer/nginx
     ports:
       - 80:80
     links:
-      - api-gateway-nginx
+      - api-server-nginx
       - home-nginx
       - communities-nginx
 
-  # API-GATEWAY
-  api-gateway-nginx:
+  api-server-nginx:
     build:
-      context: ./api-gateway/nginx
+      context: ./api-server/nginx
     ports:
       - 3080:3080
     links:
-      - api-gateway
+      - api-server
 
-  api-gateway:
+  api-server:
     build:
-      context: ./api-gateway
+      context: ./api-server
     ports:
       - 3000:3000
 
-  # HOME
   home-nginx:
     build:
       context: ./home/nginx
@@ -41,7 +38,6 @@ services:
     ports:
       - 4000:4000
 
-  # COMMUNITIES
   communities-nginx:
     build:
       context: ./communities/nginx

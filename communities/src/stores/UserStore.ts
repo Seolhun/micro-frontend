@@ -1,17 +1,17 @@
-import { createContext } from "react";
+import { createContext } from 'react';
 
 import { UserStoreProps } from './type';
 
 class UserState implements UserStoreProps {
-	userId: string = '';
+  userId: string = '';
 
-	getUserId = () => {
-		return this.userId;
-	}
+  getUserId = () => {
+    return this.userId;
+  };
 
-	setUserId = (userId: string) => {
-		return this.userId = userId;
-	}
+  setUserId = (userId: string) => {
+    return (this.userId = userId);
+  };
 }
 
 export const UserStore = createContext<UserStoreProps>(new UserState());

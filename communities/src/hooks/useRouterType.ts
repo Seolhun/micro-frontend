@@ -1,19 +1,19 @@
-import { useRouter, NextRouter } from "next/router";
+import { useRouter, NextRouter } from 'next/router';
 
 interface UseRouterType<T extends {}> extends NextRouter {
-	query: T,
+  query: T;
 }
 
 export const useRouterType = <T extends {}>(): UseRouterType<T> => {
-	const router = useRouter();
+  const router = useRouter();
 
-	const parsedQuery = router.query as T;
-	return {
-		...router,
-		query: {
-			...parsedQuery
-		},
-	}
-}
+  const parsedQuery = router.query as T;
+  return {
+    ...router,
+    query: {
+      ...parsedQuery,
+    },
+  };
+};
 
-export default useRouterType
+export default useRouterType;

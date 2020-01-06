@@ -3,7 +3,6 @@ import next from 'next';
 // import http2 from 'http2';
 // import https from 'https';
 import express from 'express';
-import session from 'express-session';
 
 import nextI18NextMiddleware from 'next-i18next/middleware';
 
@@ -24,19 +23,6 @@ app.prepare().then(() => {
    * @see https://github.com/isaachinman/next-i18next
    */
   server.use(nextI18NextMiddleware(NextI18NextInstance));
-
-  /**
-   * Sessions
-   */
-  const sessionConfig = {
-    secret: 'hi-cord-seolhun',
-    cookie: {
-      maxAge: 1000 * 60 * 60 * 24, // 24 hours in milliseconds
-    },
-    resave: false,
-    saveUninitialized: true,
-  };
-  server.use(session(sessionConfig));
 
   /**
    * Page Routes

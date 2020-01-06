@@ -3,25 +3,22 @@ import React from 'react';
 import { NextPage, NextPageContext } from 'next';
 
 import Layout from '@layouts/index';
-import { i18n, useTranslation } from '@src/i18n';
 import { Meta } from '@src/components';
+import { LanguageChanger } from '@src/containers';
 
 interface HomeProps {
   userAgent?: string;
   namespacesRequired?: string[];
 }
 
-const HomeController: NextPage<HomeProps> = ({ namespacesRequired }) => {
-  const { t } = useTranslation(namespacesRequired);
-
+const HomeController: NextPage<HomeProps> = () => {
   return (
     <Layout>
       <Meta>
         <title>Hi-Cord Home</title>
       </Meta>
-      <button type="button" onClick={() => i18n.changeLanguage(i18n.language === 'en' ? 'ko' : 'en')}>
-        {t('banner')}
-      </button>
+      <LanguageChanger />
+      <h1>Home</h1>
     </Layout>
   );
 };

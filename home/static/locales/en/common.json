@@ -1,9 +1,12 @@
 {
   "banner": "Banner",
   "change-locale": "Change locale",
+  "locales": {
+    "en": "English",
+    "ko": "Korean"
+  },
   "auth": {
     "login": "Login",
     "logout": "Logout"
-  },
-  "google": "Google"
+  }
 }

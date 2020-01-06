@@ -3,6 +3,7 @@ import { NextPage, NextPageContext } from 'next';
 
 import Layout from '@layouts/index';
 import { Meta } from '@src/components';
+import { LanguageChanger } from '@src/containers';
 
 interface CommunityListControllerProps {
   userAgent?: string;
@@ -15,7 +16,8 @@ const CommunityListController: NextPage<CommunityListControllerProps> = () => {
       <Meta>
         <title>Communities on Hi-Cord</title>
       </Meta>
-      Communities
+      <LanguageChanger />
+      <h1>Communities</h1>
     </Layout>
   );
 };

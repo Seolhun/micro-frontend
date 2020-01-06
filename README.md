@@ -12,9 +12,9 @@
 - `LoadBalancer - Ingress Nginx`
   - 80 port
   - 443 port
-  - `API-Gateway - Nginx`
+  - `API-Server - Nginx`
     - 3080 port
-    - `API-Gateway` app
+    - `API-Server` app
       - 3000 port
   - Clients
     - `Home - Nginx`
