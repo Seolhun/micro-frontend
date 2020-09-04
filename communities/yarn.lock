@@ -7834,10 +7834,15 @@ react-dom@^16.12.0:
     prop-types "^15.6.2"
     scheduler "^0.18.0"
 
-react-hook-form@^4.4.0:
-  version "4.4.1"
-  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-4.4.1.tgz#9559a409d9d774e7f53f2fecb5e3446709b3f0b7"
-  integrity sha512-+jD60cApkLwIdB6EV+H2iUEpkE1sVNF29s+1J4u8EeufWBOM5MUwCpSG/rNIjrmb+ZYjQ3z9YBb5KprJ0VAIAw==
+react-error-overlay@5.1.6:
+  version "5.1.6"
+  resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-5.1.6.tgz#0cd73407c5d141f9638ae1e0c63e7b2bf7e9929d"
+  integrity sha512-X1Y+0jR47ImDVr54Ab6V9eGk0Hnu7fVWGeHQSOXHf/C2pF9c6uy3gef8QUeuUiWlNb0i08InPSE5a/KJzNzw1Q==
+
+react-hook-form@^4.10.2:
+  version "4.10.2"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-4.10.2.tgz#fb56160c302a0e2b595ef78cc8946c9dc9cb776a"
+  integrity sha512-Ule/KqHBwUvuubqGC4WDvOARS6VjlULSS+WHspgQ5FhFKR4ytHDc4AMpjVfnv+Wbz2TEbMp9/ZHmuZsUksPCiA==
 
 react-i18next@^11.0.0:
   version "11.2.7"
