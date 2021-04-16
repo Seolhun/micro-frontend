@@ -5254,10 +5254,10 @@ mobx-react-lite@^1.5.2:
   resolved "https://registry.yarnpkg.com/mobx-react-lite/-/mobx-react-lite-1.5.2.tgz#c4395b0568b9cb16f07669d8869cc4efa1b8656d"
   integrity sha512-PyZmARqqWtpuQaAoHF5pKX7h6TKNLwq6vtovm4zZvG6sEbMRHHSqioGXSeQbpRmG8Kw8uln3q/W1yMO5IfL5Sg==
 
-mobx@4.15.5:
-  version "4.15.5"
-  resolved "https://registry.yarnpkg.com/mobx/-/mobx-4.15.5.tgz#7fb0fb5fbd56ccbd9551b1a7510494b6c5e41680"
-  integrity sha512-Tjhxy2ui0H++1ackzkeG+YSDDwS7sKBvIVCxyADK+S/8ZznctmrCL5vvu+jpE+kBLpttHj/xP+haLC5QEsqA2Q==
+mobx@4.15.7:
+  version "4.15.7"
+  resolved "https://registry.yarnpkg.com/mobx/-/mobx-4.15.7.tgz#933281268c3b4658b6cf2526e872cf78ea48ab95"
+  integrity sha512-X4uQvuf2zYKHVO5kRT5Utmr+J9fDnRgxWWnSqJ4oiccPTQU38YG+/O3nPmOhUy4jeHexl7XJJpWDBgEnEfp+8w==
 
 ms@2.0.0:
   version "2.0.0"
