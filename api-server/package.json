@@ -28,7 +28,7 @@
     "http-proxy-middleware": "^0.20.0",
     "lodash": "^4.17.19",
     "nodemon": "^2.0.0",
-    "winston": "^3.2.1"
+    "winston": "^3.3.3"
   },
   "devDependencies": {
     "@types/cors": "^2.8.6",
